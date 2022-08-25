@@ -11,7 +11,7 @@
 console.log('js ok');
 
 // ciclo for per scrivere numeri da 1 a 100
-for (let i = 1; i < 101; i++) {
+for (let i = 1; i <= 100; i++) {
 
 
     // codizione per i divisibili per 3 e 5 
@@ -26,10 +26,38 @@ for (let i = 1; i < 101; i++) {
     else if (i % 5 === 0) {
         console.log('buzz')
     }
-
     // nessuna condizione 
     else {
         console.log(i)
     }
+}
 
+
+
+// BONUS 1
+// creazione griglia
+const grid = document.getElementById('grid');
+
+for (let square = 1; square <= 100; square++) {
+    const element = document.createElement('div'); //creo div nell'html
+
+    // codizione per i divisibili per 3 e 5 
+    if (square % 5 === 0 && square % 3 === 0) {
+        element.append('fizzbuzz'); //aggiungo fizzbuzz all'element div creato sopra
+    }
+    //condizione per i divisibili per 3
+    else if (square % 3 === 0) {
+        element.append('fizz'); //aggiungo fizz all'element div creato sopra
+    }
+    //condizione per i divisibili per 5
+    else if (square % 5 === 0) {
+        element.append('buzz'); //aggiungo buzz all'element div creato sopra
+    }
+
+    // nessuna condizione 
+    else {
+        element.append(square); //aggiungo square all'element div creato sopra
+    }
+
+    grid.append(element);
 }
